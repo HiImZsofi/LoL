@@ -2,10 +2,17 @@
     box-shadow: 0px 10px 8px #888888;
     padding-right: 0px;
     padding-left: 0px;
+    background: linear-gradient(90deg, rgba(212,212,212,1) 39%, rgba(191,253,255,1) 70%);
+}
+body{
+    background-image: url(img/background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .container-fluid{
     padding-right: 0px;
     padding-left: 0px;
+    overflow: hidden;
 }
 @keyframes slideInFromRight {
     0% {
@@ -19,29 +26,40 @@
 .slider{
     text-align: justify; 
     animation: slideInFromRight 1s ease-in;
-    margin-left: 120px;
+    margin-left: 100px;
     margin-top: 60px;
     overflow: hidden;
+    margin-right: 0px;
 }
 .slider p {
     text-align: justify;
-    float: center;
+    float: left;
     -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
        -moz-animation: fadein 2s; /* Firefox < 16 */
         -ms-animation: fadein 2s; /* Internet Explorer */
          -o-animation: fadein 2s; /* Opera < 12.1 */
             animation: fadein 2s;
-    font-size: 20px;
+    font-size: 19px;
     padding: 0px;
+    color: rgb(221, 178, 70);
+    text-shadow: 2px 2px #202020;
+    font-family: 'Brush Script MT', cursive;
+    font-weight: bold;
+
 }
 @keyframes fadein {
     from { opacity: 0; }
     to   { opacity: 1; }
 }
 #description{
-    text-align: justify;
+    text-align:justify;
+text-align-last: justify;
+/* for IE9 */
+-ms-text-align-last:center;
     margin-top: 130px;
-    margin-right: 0px;
+    margin-right: 20px;
+    margin-left: 0px;
+    overflow: hidden;
 }
 .div-col-lg12{
     margin: 0px;
@@ -52,4 +70,112 @@
 }
 button{
     margin-right: 10px;
+}
+.playbtn{
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+#play{
+    position: relative;
+    display: inline-block;
+    padding: 25px 30px;
+    margin: 40px 0;
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.5s;
+    letter-spacing: 0px;
+    overflow: hidden;
+    margin-right: 50px;
+    font-size: 25px;
+}
+#play:hover{
+    background: #5bf403;
+    color: #050801;
+    box-shadow: 0 0 5px #5bf403,
+                0 0 25px #5bf403,
+                0 0 50px #5bf403,
+                0 0 200px #5bf403;
+     -webkit-box-reflect:below 1px linear-gradient(transparent, rgba(173, 173, 173, 0.333));
+}
+#play:nth-child(1){
+    filter: hue-rotate(270deg);
+}
+#play:nth-child(2){
+    filter: hue-rotate(110deg);
+}
+#play span{
+    position: absolute;
+    display: block;
+}
+#play span:nth-child(1){
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg,transparent,#5bf403);
+    animation: animate1 1s linear infinite;
+}
+@keyframes animate1{
+    0%{
+        left: -100%;
+    }
+    50%,100%{
+        left: 100%;
+    }
+}
+#play span:nth-child(2){
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg,transparent,#5bf403);
+    animation: animate2 1s linear infinite;
+    animation-delay: 0.25s;
+}
+@keyframes animate2{
+    0%{
+        top: -100%;
+    }
+    50%,100%{
+        top: 100%;
+    }
+}
+#play span:nth-child(3){
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg,transparent,#5bf403);
+    animation: animate3 1s linear infinite;
+    animation-delay: 0.50s;
+}
+@keyframes animate3{
+    0%{
+        right: -100%;
+    }
+    50%,100%{
+        right: 100%;
+    }
+}
+
+
+#play span:nth-child(4){
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg,transparent,#5bf403);
+    animation: animate4 1s linear infinite;
+    animation-delay: 0.75s;
+}
+@keyframes animate4{
+    0%{
+        bottom: -100%;
+    }
+    50%,100%{
+        bottom: 100%;
+    }
 }
