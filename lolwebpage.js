@@ -49,3 +49,12 @@ win.scroll(function(event) {
   });
   
 });
+
+$(window).ready(function() {
+  $('.history_scroll').click(function(e) {
+    e.preventDefault();
+    $('body').animate({
+        scrollTop: eval($('#' + $(this).attr('target')).offset().top - 70)
+    }, 2000);
+});
+})
