@@ -50,6 +50,14 @@ win.scroll(function(event) {
   
 });
 
+function assassin_switch(){
+  console.log("asd");
+  $('.rolename').text("Assassin");
+  $('.roldesc').text("Slayers (formerly Assassins) are fragile but agile damage-focused melee champions that look to swiftly take down their targets.");
+  $('.rolepic').prepend('<img src="img/assassin.jpg" />');
+  $( ".rolename" ).slideUp( 300 ).delay( 800 ).fadeIn( 400 );
+}
+
 $(window).ready(function() {
   $('.history_scroll').click(function(e) {
     e.preventDefault();
@@ -58,3 +66,20 @@ $(window).ready(function() {
     }, 2000);
 });
 })
+
+/*$( "#list_assassin" ).click(function(e) { 
+    console.log("asd");
+    e.preventDefault();
+   /* setTimeout(function () {
+      $('.main .title').text("Changed title!");
+      $('.main .description').text("Changed Description");
+  }, 1000);
+
+    $('.rolename').text("Assassin");
+    $('.roledesc').text("Slayers (formerly Assassins) are fragile but agile damage-focused melee champions that look to swiftly take down their targets.");
+    $('.rolepic').prepend('<img src="img/rengar.png" />');
+    //$( ".role" ).slideUp( 300 ).delay( 800 ).fadeIn( 400 );
+});*/
+
+
+
