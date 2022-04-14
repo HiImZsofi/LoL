@@ -58,6 +58,18 @@ function assassin_switch(){
   $( ".rolename" ).slideUp( 300 ).delay( 800 ).fadeIn( 400 );
 }
 
+function checkIfPC(){
+  var viewportWidth = $(window).width(); //1865 PC-n
+  var viewportHeight = $(window).height(); //3030 PC-n
+  //alert(viewportWidth);
+  //console.log(viewportHeight);
+  //console.log(viewportWidth); 
+  if ($(window).width() > 1860) {
+    $('.header').css("margin-top","260px");
+    $('.slider').css("margin-left","200px")
+   }
+ }
+
 $(window).ready(function() {
   $('.history_scroll').click(function(e) {
     e.preventDefault();
@@ -65,21 +77,8 @@ $(window).ready(function() {
         scrollTop: eval($('#' + $(this).attr('target')).offset().top - 70)
     }, 2000);
 });
+checkIfPC();
 })
 
-/*$( "#list_assassin" ).click(function(e) { 
-    console.log("asd");
-    e.preventDefault();
-   /* setTimeout(function () {
-      $('.main .title').text("Changed title!");
-      $('.main .description').text("Changed Description");
-  }, 1000);
-
-    $('.rolename').text("Assassin");
-    $('.roledesc').text("Slayers (formerly Assassins) are fragile but agile damage-focused melee champions that look to swiftly take down their targets.");
-    $('.rolepic').prepend('<img src="img/rengar.png" />');
-    //$( ".role" ).slideUp( 300 ).delay( 800 ).fadeIn( 400 );
-});*/
-
-
+$(document).on('click', '#list_assassin', function() { alert("hello"); });
 
